@@ -1,0 +1,146 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+#container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Grid Size Buttons */
+.grid-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.grid-button:hover {
+    background-color: #45a049;
+}
+
+/* Solve Button - Larger */
+.solve-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.solve-button:hover {
+    background-color: #45a049;
+}
+
+/* Undo and Clear Buttons - Smaller */
+.action-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 45%; /* Adjust width for smaller size */
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Sudoku Grid */
+.grid {
+    display: grid;
+    gap: 1px;
+    margin: 20px 0;
+    justify-items: center;
+    grid-template-columns: repeat(9, 40px); /* Default to 9x9, will update dynamically */
+}
+
+input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007BFF;
+}
+
+input.user-input {
+    font-weight: bold;
+    color: red;
+}
+
+input.solved {
+    font-weight: bold;
+    color: black;
+}
+
+input.invalid {
+    background-color: #f8d7da;
+}
+
+@media (max-width: 600px) {
+    #container {
+        width: 90%;
+    }
+
+    .grid-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .action-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    input {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
